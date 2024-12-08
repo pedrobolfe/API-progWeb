@@ -29,10 +29,11 @@
                 <form id="formRua" class="row g-4 p-4 bg-white rounded shadow-lg border border-2">
                     <div class="d-flex col-lg-8 justify-content-between align-items-center mx-auto">
                         <div class="d-flex align-items-center pe-0" id="cidadeContainer">
-                            <label  id="labelCidades" for="cidades" class="form-label me-2" hidden>Escolha a Cidade:</label>
-                            <select id="cidades" name="Cidades" class="form-select shadow-sm rounded-0" hidden>
-                                <option value="" selected disabled>Selecione uma cidade</option>
-                            </select>
+                            <label id="labelCidades" for="searchCidades" class="form-label" hidden>Digite a cidade:</label>
+                            <div class="autocomplete">
+                                <input type="text" id="searchCidades" class="form-control" placeholder="Digite o nome da cidade" hidden>
+                                <ul id="cidadeLista" class="list-group" style="max-height: 200px; overflow-y: auto; display: none;"></ul>
+                            </div>
                         </div>
             
                         <div class="d-flex flex-fill ps-0">
