@@ -135,11 +135,15 @@ async function getViaCep() {
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between">
                             <i class="bi bi-house-door"> <strong>Logradouro:</strong></i>
-                            <span>${resp.logradouro}</span>
+                            <span>${resp.logradouro ? resp.logradouro : "Sem logradouro especifico para o CEP"}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <i class="bi bi-plus-circle"> <strong>Complemento:</strong></i>
+                            <span>${resp.complemento ? resp.complemento : "Sem complemento"}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <i class="bi bi-building"> <strong>Bairro:</strong></i>
-                            <span>${resp.bairro}</span>
+                            <span>${resp.bairro ? resp.bairro : "Sem bairro especifico para esse CEP"}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <i class="bi bi-geo-alt"> <strong>Cidade:</strong></i>
@@ -208,11 +212,15 @@ async function getViaCep() {
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between">
                                 <i class="bi bi-house-door"> <strong>Logradouro:</strong></i>
-                                <span>${resp.logradouro}</span>
+                                <span>${resp.logradouro ? resp.logradouro : "Sem logradouro especifico para o CEP"}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <i class="bi bi-plus-circle"> <strong>Complemento:</strong></i>
+                                <span>${resp.complemento ? resp.complemento : "Sem complemento"}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <i class="bi bi-building"> <strong>Bairro:</strong></i>
-                                <span>${resp.bairro}</span>
+                                <span>${resp.bairro ? resp.bairro : "Sem bairro especifico para esse CEP"}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <i class="bi bi-geo-alt"> <strong>Cidade:</strong></i>
