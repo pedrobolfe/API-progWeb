@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API ViaCep</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-center mb-4">
+                <h1 class="fw-bold text-primary">Qual pesquisa deseja usar?</h1>
+                <div class="d-flex justify-content-center " style="width: 30%;">
+                    <select id="tipoConsulta" class="form-select w-50 shadow-sm ">
+                        <option value="" selected disabled>Selecione aqui</option>
+                        <option value="cep">Validação do CEP</option>
+                        <option value="rua">Pesquisa de CEP</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="consulta" id="consulta" hidden>
+                <form id="formRua" class="row g-4 p-4 bg-white rounded shadow-lg border border-2">
+                    <div class="d-flex col-lg-8 justify-content-between align-items-center mx-auto">
+                        <div class="d-flex align-items-center pe-0" id="cidadeContainer">
+                            <label  id="labelCidades" for="cidades" class="form-label me-2" hidden>Escolha a Cidade:</label>
+                            <select id="cidades" name="Cidades" class="form-select shadow-sm rounded-0" hidden>
+                                <option value="" selected disabled>Selecione uma cidade</option>
+                            </select>
+                        </div>
+            
+                        <div class="d-flex flex-fill ps-0">
+                            <label id="labelForm" for="inputForm" class="form-label m-2" hidden></label>
+                            <input id="inputForm" type="text" class="form-control shadow-sm rounded-0" placeholder="" required>
+                            <a class="btn-excluir m-2" onclick="limparForm()"><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center">
+                        <h3 id="error-mensagem" class="text-danger" hidden>Mensagem de erro</h3>
+                    </div>
+            
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-5 shadow-sm fw-bold">
+                            Consultar <i class="fa fa-search"></i> 
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div id="container-response">
+                <div class="d-flex justify-content-start">
+                    <h1 class="text-primary ">Endereços encontrados</h1>
+                    <a class="btn-excluir m-3" onclick="limparConsultas()"><i class="fa fa-trash"></i></a>
+                </div>
+                
+                <h1 id="haveItem" class="text-center">Nenhum valor consultado.</h1>
+
+                <div id="responses" class="d-flex justify-content-md-around flex-wrap ">
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <footer class="d-flex">
+        <h2>Pedro Henrique Schroeder Bolfe</h2>
+        <a href="https://github.com/pedrobolfe/API-progWeb">Acesse o repositorio desse projeto</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
